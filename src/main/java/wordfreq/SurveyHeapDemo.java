@@ -1,5 +1,7 @@
 package wordfreq;
 
+import java.util.Arrays;
+
 public class SurveyHeapDemo {
     private SurveyHeapDemo() {}
 
@@ -16,5 +18,16 @@ public class SurveyHeapDemo {
             new WordFreq("would recommend to friends", 800),
             new WordFreq("visit the store", 700)
         };
+
+        System.out.println("Before heapify:");
+        System.out.println(Arrays.toString(data));
+        WordFreqMaxHeap.buildMaxHeap(data);
+
+        System.out.println("After heapify:");
+        System.out.println(Arrays.toString(data));
+        System.out.println("Indexed view:");
+        for (int i = 0; i < data.length; i++) {
+            System.out.println(i + ": " + data[i]);
+        }
     }
 }
