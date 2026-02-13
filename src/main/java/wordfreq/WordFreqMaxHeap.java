@@ -16,12 +16,12 @@ public class WordFreqMaxHeap {
         int n = a.length;
 
         for (int i = (n / 2) - 1; i >= 0; i--) {
-            // maxHeapify call here, method not implemented yet
+            maxHeapify(a, n, i);
         }
     }
 
     /**
-     * MAX-HEAPIFY
+     * MAX-HEAPIFY (sift-down)
      * 
      * Fixes the heap at index i by pushing a[i] down until a[i] is >= both children or it becomes a leaf
      * 
@@ -36,11 +36,29 @@ public class WordFreqMaxHeap {
 
             int largest = i;
 
+            // compare left child
             if (left < heapSize && a[left].frequency > a[largest].frequency) {
                 largest = left;
             }
 
+            // compare right child
+            if (right < heapSize && a[right].frequency > a[largest].frequency) {
+                largest = right;
+            }
 
+            // if the parent is already the largest, return the heap
+            if (largest == i) return;
+
+            // else, swap the parent with the larger child
+            swap(a, i, largest);
+            i = largest;
         }
+    }
+
+    /** Swap two positions of the array */
+    private static void swap(WordFreq[] a, int i, int j) {
+        WordFreq temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
     }
 }
