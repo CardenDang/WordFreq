@@ -12,4 +12,9 @@ public class WordFreq {
         this.word = word;
         this.frequency = frequency;
     }
+
+    @Override
+    public String toString() {
+        return word + " (" + frequency + ")";
+    }
 }
