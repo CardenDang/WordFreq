@@ -21,11 +21,13 @@ public class SurveyHeapDemo {
 
         System.out.println("Before heapify:");
         System.out.println(Arrays.toString(data));
-        WordFreqMaxHeap.buildMaxHeap(data);
+        
+        WordFreqMaxHeap.buildMaxHeap(data); // heapify
 
         System.out.println("After heapify:");
         System.out.println(Arrays.toString(data));
-        System.out.println("Indexed view:");
+        
+        System.out.println("Indexed view:"); // print in an organized list
         for (int i = 0; i < data.length; i++) {
             System.out.println(i + ": " + data[i]);
         }
