@@ -15,6 +15,6 @@ public class SurveyHeapDemo {
             new WordFreq("easy to use", 140),
             new WordFreq("would recommend to friends", 800),
             new WordFreq("visit the store", 700)
-        }
+        };
     }
 }
